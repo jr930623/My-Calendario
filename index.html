@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mi Calendario</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Decoración del fondo -->
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+    <div class="blob blob-three"></div>
+
+    <div class="stars">
+      <span>✦</span>
+      <span>✧</span>
+      <span>✦</span>
+      <span>✧</span>
+      <span>✦</span>
+    </div>
+
+    <main class="container">
+      <!-- ENCABEZADO -->
+
+      <header class="header">
+        <div class="logo">
+          <span class="logo-small">MY</span>
+          <span class="logo-big">CALENDAR</span>
+        </div>
+
+        <p>Organiza tus días. Cumple tus metas. ✨</p>
+      </header>
+
+      <!-- CALENDARIO -->
+
+      <section class="calendar">
+        <div class="calendar-header">
+          <button id="prevMonth" class="nav-button">‹</button>
+
+          <div class="month-container">
+            <span class="month-decoration">★</span>
+
+            <h1 id="monthYear"></h1>
+
+            <span class="month-decoration">★</span>
+          </div>
+
+          <button id="nextMonth" class="nav-button">›</button>
+        </div>
+
+        <!-- DÍAS DE LA SEMANA -->
+
+        <div class="weekdays">
+          <div>DOM</div>
+          <div>LUN</div>
+          <div>MAR</div>
+          <div>MIÉ</div>
+          <div>JUE</div>
+          <div>VIE</div>
+          <div>SÁB</div>
+        </div>
+
+        <!-- DÍAS -->
+
+        <div id="calendarDays" class="calendar-days"></div>
+      </section>
+
+      <!-- MENSAJE INFERIOR -->
+
+      <div class="bottom-message">
+        <span>✦</span>
+
+        <strong> ¡TÚ PUEDES HACERLO! </strong>
+
+        <span>✦</span>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

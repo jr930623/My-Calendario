@@ -1,0 +1,691 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap");
+
+/* ============================= */
+/* CONFIGURACIÓN GENERAL */
+/* ============================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: "Fredoka", sans-serif;
+
+  background:
+    radial-gradient(circle at 15% 20%, #ffd400 0 5%, transparent 5.5%),
+    linear-gradient(135deg, #ff6a00, #ff8c00, #ff4b00);
+
+  padding: 30px;
+
+  overflow-x: hidden;
+}
+
+/* ============================= */
+/* FONDO */
+/* ============================= */
+
+.blob {
+  position: fixed;
+
+  border-radius: 50%;
+
+  z-index: -2;
+
+  opacity: 0.25;
+
+  filter: blur(1px);
+}
+
+.blob-one {
+  width: 300px;
+  height: 300px;
+
+  background: #fff;
+
+  top: -120px;
+  left: -100px;
+}
+
+.blob-two {
+  width: 220px;
+  height: 220px;
+
+  background: #9b5de5;
+
+  right: -60px;
+  top: 30%;
+}
+
+.blob-three {
+  width: 350px;
+  height: 350px;
+
+  background: #00d9ff;
+
+  bottom: -180px;
+  left: 10%;
+}
+
+.stars {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.stars span {
+  position: absolute;
+
+  color: white;
+
+  font-size: 30px;
+
+  animation: floatStar 4s ease-in-out infinite;
+}
+
+.stars span:nth-child(1) {
+  top: 12%;
+  left: 7%;
+}
+
+.stars span:nth-child(2) {
+  top: 20%;
+  right: 12%;
+}
+
+.stars span:nth-child(3) {
+  bottom: 15%;
+  right: 7%;
+}
+
+.stars span:nth-child(4) {
+  bottom: 25%;
+  left: 5%;
+}
+
+.stars span:nth-child(5) {
+  top: 50%;
+  left: 2%;
+}
+
+@keyframes floatStar {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(15deg);
+  }
+}
+
+/* ============================= */
+/* CONTENEDOR */
+/* ============================= */
+
+.container {
+  width: min(1250px, 100%);
+
+  margin: auto;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.header {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.logo {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background: #111;
+
+  color: white;
+
+  padding: 12px 25px;
+
+  border-radius: 22px;
+
+  border: 4px solid #111;
+
+  box-shadow: 8px 8px 0 #000;
+
+  transform: rotate(-2deg);
+}
+
+.logo-small {
+  background: #ff6a00;
+
+  padding: 5px 10px;
+
+  border-radius: 12px;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+.logo-big {
+  font-size: 32px;
+
+  letter-spacing: 2px;
+
+  font-weight: 700;
+}
+
+.header p {
+  color: white;
+
+  font-size: 19px;
+
+  margin-top: 18px;
+
+  font-weight: 500;
+}
+
+/* ============================= */
+/* CALENDARIO */
+/* ============================= */
+
+.calendar {
+  background: #fff;
+
+  border: 6px solid #111;
+
+  border-radius: 32px;
+
+  padding: 25px;
+
+  box-shadow: 12px 12px 0 #111;
+}
+
+/* ============================= */
+/* HEADER DEL CALENDARIO */
+/* ============================= */
+
+.calendar-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.month-container {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+#monthYear {
+  font-size: 32px;
+
+  text-align: center;
+
+  color: #111;
+}
+
+.month-decoration {
+  color: #ff6a00;
+
+  font-size: 25px;
+}
+
+/* ============================= */
+/* BOTONES */
+/* ============================= */
+
+.nav-button {
+  width: 55px;
+  height: 55px;
+
+  border: 4px solid #111;
+
+  border-radius: 17px;
+
+  background: #ff6a00;
+
+  color: white;
+
+  font-size: 38px;
+
+  line-height: 30px;
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 5px 5px 0 #111;
+
+  transition: 0.15s;
+}
+
+.nav-button:hover {
+  transform: translate(2px, 2px);
+
+  box-shadow: 2px 2px 0 #111;
+
+  background: #ff4b00;
+}
+
+.nav-button:active {
+  transform: translate(5px, 5px);
+
+  box-shadow: none;
+}
+
+/* ============================= */
+/* DÍAS DE LA SEMANA */
+/* ============================= */
+
+.weekdays {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 8px;
+
+  margin-bottom: 8px;
+}
+
+.weekdays div {
+  background: #111;
+
+  color: white;
+
+  padding: 12px 5px;
+
+  text-align: center;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  font-size: 14px;
+}
+
+/* ============================= */
+/* CUADRÍCULA */
+/* ============================= */
+
+.calendar-days {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 8px;
+}
+
+/* ============================= */
+/* DÍA */
+/* ============================= */
+
+.day {
+  min-height: 175px;
+
+  background: #f7f7f7;
+
+  border: 3px solid #111;
+
+  border-radius: 17px;
+
+  padding: 9px;
+
+  position: relative;
+
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+.day:hover {
+  transform: rotate(-1deg) translateY(-2px);
+
+  box-shadow: 5px 5px 0 #111;
+}
+
+.day.empty {
+  background: #ddd;
+
+  opacity: 0.45;
+
+  box-shadow: none;
+}
+
+/* ============================= */
+/* DÍA ACTUAL */
+/* ============================= */
+
+.day.today {
+  background: #ffe45c;
+
+  border-color: #ff6a00;
+
+  animation: todayPulse 2s infinite;
+}
+
+@keyframes todayPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(255, 106, 0, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 15px rgba(255, 106, 0, 0.35);
+  }
+}
+
+/* ============================= */
+/* NÚMERO DEL DÍA */
+/* ============================= */
+
+.day-number {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #ff6a00;
+
+  color: white;
+
+  border: 3px solid #111;
+
+  border-radius: 50%;
+
+  font-weight: 700;
+
+  margin-bottom: 7px;
+}
+
+/* ============================= */
+/* ZONA DE TAREA */
+/* ============================= */
+
+.task-area {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+/* ============================= */
+/* INPUT DE TAREA */
+/* ============================= */
+
+.task-input {
+  width: 100%;
+
+  height: 85px;
+
+  resize: none;
+
+  border: 2px dashed #aaa;
+
+  border-radius: 11px;
+
+  background: white;
+
+  padding: 8px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.task-input:focus {
+  border-color: #ff6a00;
+
+  border-style: solid;
+
+  box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.15);
+}
+
+/* ============================= */
+/* TAREA COMPLETADA */
+/* ============================= */
+
+.task-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+/* CHECKBOX */
+
+.task-checkbox {
+  appearance: none;
+
+  width: 25px;
+  height: 25px;
+
+  border: 3px solid #111;
+
+  border-radius: 7px;
+
+  background: white;
+
+  cursor: pointer;
+
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+/* CHULO */
+
+.task-checkbox:checked {
+  background: #39d353;
+
+  border-color: #111;
+}
+
+.task-checkbox:checked::after {
+  content: "✓";
+
+  position: absolute;
+
+  color: white;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  left: 3px;
+
+  top: -1px;
+}
+
+/* TEXTO COMPLETADO */
+
+.task-input.completed {
+  text-decoration: line-through;
+
+  opacity: 0.55;
+
+  background: #d9ffd9;
+}
+
+/* ============================= */
+/* MENSAJE INFERIOR */
+/* ============================= */
+
+.bottom-message {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  color: white;
+
+  margin-top: 30px;
+
+  font-size: 20px;
+}
+
+.bottom-message span {
+  color: #ffe600;
+
+  font-size: 28px;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 850px) {
+  body {
+    padding: 15px;
+  }
+
+  .calendar {
+    padding: 15px;
+
+    border-width: 4px;
+
+    box-shadow: 8px 8px 0 #111;
+  }
+
+  #monthYear {
+    font-size: 24px;
+  }
+
+  .nav-button {
+    width: 45px;
+    height: 45px;
+
+    font-size: 30px;
+  }
+
+  .day {
+    min-height: 145px;
+  }
+
+  .task-input {
+    height: 65px;
+
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 8px;
+  }
+
+  .logo-big {
+    font-size: 23px;
+  }
+
+  .logo-small {
+    font-size: 15px;
+  }
+
+  .header p {
+    font-size: 15px;
+  }
+
+  .calendar {
+    border-radius: 20px;
+
+    padding: 8px;
+  }
+
+  #monthYear {
+    font-size: 18px;
+  }
+
+  .month-decoration {
+    display: none;
+  }
+
+  .weekdays {
+    gap: 3px;
+  }
+
+  .weekdays div {
+    font-size: 9px;
+
+    padding: 8px 2px;
+  }
+
+  .calendar-days {
+    gap: 3px;
+  }
+
+  .day {
+    min-height: 115px;
+
+    padding: 5px;
+
+    border-width: 2px;
+
+    border-radius: 10px;
+  }
+
+  .day-number {
+    width: 25px;
+    height: 25px;
+
+    font-size: 11px;
+
+    border-width: 2px;
+  }
+
+  .task-input {
+    height: 50px;
+
+    font-size: 9px;
+
+    padding: 4px;
+  }
+
+  .task-checkbox {
+    width: 21px;
+    height: 21px;
+  }
+
+  .task-checkbox:checked::after {
+    font-size: 15px;
+
+    left: 2px;
+  }
+
+  .bottom-message {
+    font-size: 15px;
+  }
+}
